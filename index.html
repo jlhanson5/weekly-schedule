@@ -313,7 +313,7 @@
 <body>
     <div class="header">
         <h1>📅 Your Week: Jan 12-18</h1>
-        <div class="week-summary">8 tasks due • 18+ meetings • You've got this! 💪</div>
+        <div class="week-summary">9 tasks due • 18+ meetings • You've got this! 💪</div>
     </div>
     
     <div class="container">
@@ -341,7 +341,7 @@
             <div class="day-header monday" onclick="toggleDay('monday')">
                 <div>
                     <div class="day-title">Monday, Jan 12</div>
-                    <div class="day-meta">4 tasks due • 2 meetings</div>
+                    <div class="day-meta">5 tasks due • 2 meetings</div>
                 </div>
                 <div class="toggle-icon" id="monday-icon">▼</div>
             </div>
@@ -350,8 +350,18 @@
                     <div class="checkbox-container" onclick="toggleCheckbox(this)">
                         <input type="checkbox" id="mon-1" onchange="updateProgress()">
                         <div class="checkbox-content">
-                            <div class="time">9:30-10:15 AM</div>
+                            <div class="time">9:30-10:00 AM</div>
                             <div class="activity">Email Andrea re: class logistics <span class="badge due">DUE</span></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="time-block focus">
+                    <div class="checkbox-container" onclick="toggleCheckbox(this)">
+                        <input type="checkbox" id="mon-1b" onchange="updateProgress()">
+                        <div class="checkbox-content">
+                            <div class="time">10:00-10:15 AM</div>
+                            <div class="activity">Email Dorthea and Sri <span class="badge due">DUE</span></div>
                         </div>
                     </div>
                 </div>
