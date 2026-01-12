@@ -313,7 +313,7 @@
 <body>
     <div class="header">
         <h1>📅 Your Week: Jan 12-18</h1>
-        <div class="week-summary">10 tasks due • 18+ meetings • You've got this! 💪</div>
+        <div class="week-summary">10 tasks due • 20 meetings • You've got this! 💪</div>
     </div>
     
     <div class="container">
@@ -331,9 +331,9 @@
         
         <div class="alert warning">
             <strong>⚠️ Critical Warnings This Week:</strong>
-            • Wednesday 12-4pm: 4 back-to-back meetings<br>
-            • Tuesday: Only 2.5 hours for focused work<br>
-            • Wednesday AM: Best window for ESLA paper (some flexibility)
+            • Wednesday: Job talk 10-11:30 AM, very limited time for ESLA paper<br>
+            • Wednesday 12-4pm: 4 back-to-back meetings after job talk<br>
+            • Tuesday: Only 2.5 hours for focused work
         </div>
         
         <!-- MONDAY -->
@@ -341,16 +341,21 @@
             <div class="day-header monday" onclick="toggleDay('monday')">
                 <div>
                     <div class="day-title">Monday, Jan 12</div>
-                    <div class="day-meta">6 tasks due • 2 meetings</div>
+                    <div class="day-meta">6 tasks due • 3 meetings</div>
                 </div>
                 <div class="toggle-icon" id="monday-icon">▼</div>
             </div>
             <div class="day-content" id="monday-content">
+                <div class="alert warning">
+                    <strong>⚠️ Busy Morning:</strong>
+                    Fit in quick tasks before 10 AM job talk, then catch up on remaining tasks after meetings!
+                </div>
+                
                 <div class="time-block focus">
                     <div class="checkbox-container" onclick="toggleCheckbox(this)">
                         <input type="checkbox" id="mon-1" onchange="updateProgress()">
                         <div class="checkbox-content">
-                            <div class="time">9:30-10:00 AM</div>
+                            <div class="time">9:30-9:45 AM</div>
                             <div class="activity">Email Andrea re: class logistics <span class="badge due">DUE</span></div>
                         </div>
                     </div>
@@ -360,47 +365,27 @@
                     <div class="checkbox-container" onclick="toggleCheckbox(this)">
                         <input type="checkbox" id="mon-1b" onchange="updateProgress()">
                         <div class="checkbox-content">
-                            <div class="time">10:00-10:15 AM</div>
-                            <div class="activity">Email Dorthea and Sri <span class="badge due">DUE</span></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="time-block focus">
-                    <div class="checkbox-container" onclick="toggleCheckbox(this)">
-                        <input type="checkbox" id="mon-1c" onchange="updateProgress()">
-                        <div class="checkbox-content">
-                            <div class="time">10:15-10:30 AM</div>
-                            <div class="activity">Make decision about NIMH cross-cutting measure <span class="badge due">DUE</span></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="time-block focus">
-                    <div class="checkbox-container" onclick="toggleCheckbox(this)">
-                        <input type="checkbox" id="mon-2" onchange="updateProgress()">
-                        <div class="checkbox-content">
-                            <div class="time">10:30-11:30 AM</div>
-                            <div class="activity">Send out developmental meeting notes <span class="badge due">DUE</span><br>
-                            <em style="font-size: 0.85rem; color: #666;">Note: Might take a bit longer than expected</em></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="time-block focus">
-                    <div class="checkbox-container" onclick="toggleCheckbox(this)">
-                        <input type="checkbox" id="mon-3" onchange="updateProgress()">
-                        <div class="checkbox-content">
-                            <div class="time">11:30-11:30 AM</div>
-                            <div class="activity">Schedule Margaret Sheridan conference call <span class="badge due">DUE</span><br>
-                            <em style="font-size: 0.85rem; color: #666;">Quick task - squeeze in before meeting</em></div>
+                            <div class="time">9:45-10:00 AM</div>
+                            <div class="activity">Email Dorthea and Sri + Make decision about NIMH cross-cutting measure <span class="badge due">DUE</span><br>
+                            <em style="font-size: 0.85rem; color: #666;">Quick tasks before job talk</em></div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="time-block meeting">
                     <div class="checkbox-container" onclick="toggleCheckbox(this)">
-                        <input type="checkbox" id="mon-4" onchange="updateProgress()">
+                        <input type="checkbox" id="mon-2" onchange="updateProgress()">
+                        <div class="checkbox-content">
+                            <div class="time">10:00-11:30 AM</div>
+                            <div class="activity">🗓️ Clinical Faculty Job Talk - Frances Wang, Ph.D. <span class="badge meeting">Meeting</span><br>
+                            <em style="font-size: 0.85rem; color: #666;">SENSQ 4127 - Alcohol use disorder research</em></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="time-block meeting">
+                    <div class="checkbox-container" onclick="toggleCheckbox(this)">
+                        <input type="checkbox" id="mon-3" onchange="updateProgress()">
                         <div class="checkbox-content">
                             <div class="time">11:30 AM-12:30 PM</div>
                             <div class="activity">🗓️ LRDC Faculty Development Committee <span class="badge meeting">Meeting</span><br>
@@ -411,7 +396,7 @@
                 
                 <div class="time-block meeting">
                     <div class="checkbox-container" onclick="toggleCheckbox(this)">
-                        <input type="checkbox" id="mon-5" onchange="updateProgress()">
+                        <input type="checkbox" id="mon-4" onchange="updateProgress()">
                         <div class="checkbox-content">
                             <div class="time">1:00-2:00 PM</div>
                             <div class="activity">🗓️ Jamie + Matt <span class="badge meeting">Meeting</span><br>
@@ -422,9 +407,30 @@
                 
                 <div class="time-block focus">
                     <div class="checkbox-container" onclick="toggleCheckbox(this)">
+                        <input type="checkbox" id="mon-5" onchange="updateProgress()">
+                        <div class="checkbox-content">
+                            <div class="time">2:00-3:00 PM</div>
+                            <div class="activity">Send out developmental meeting notes <span class="badge due">DUE</span><br>
+                            <em style="font-size: 0.85rem; color: #666;">Moved to afternoon due to morning meetings</em></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="time-block focus">
+                    <div class="checkbox-container" onclick="toggleCheckbox(this)">
                         <input type="checkbox" id="mon-6" onchange="updateProgress()">
                         <div class="checkbox-content">
-                            <div class="time">2:00-4:00 PM</div>
+                            <div class="time">3:00-3:15 PM</div>
+                            <div class="activity">Schedule Margaret Sheridan conference call <span class="badge due">DUE</span></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="time-block focus">
+                    <div class="checkbox-container" onclick="toggleCheckbox(this)">
+                        <input type="checkbox" id="mon-7" onchange="updateProgress()">
+                        <div class="checkbox-content">
+                            <div class="time">3:15-4:00 PM</div>
                             <div class="activity">Start lab website update (use AI) <span class="badge due">DUE</span><br>
                             <em style="font-size: 0.85rem; color: #666;">Suggestions: Try Claude.ai for content/copy, v0.dev or ChatGPT for design/layout. Can continue later if needed</em></div>
                         </div>
@@ -487,24 +493,35 @@
             <div class="day-header wednesday" onclick="toggleDay('wednesday')">
                 <div>
                     <div class="day-title">Wednesday, Jan 14 🔥</div>
-                    <div class="day-meta">HARDEST DAY • 1 task due • 4 meetings</div>
+                    <div class="day-meta">HARDEST DAY • 1 task due • 5 meetings</div>
                 </div>
                 <div class="toggle-icon" id="wednesday-icon">▼</div>
             </div>
             <div class="day-content" id="wednesday-content">
                 <div class="alert warning">
-                    <strong>🔥 Meeting Marathon Day:</strong>
-                    Best window for ESLA paper in the morning, then 4 consecutive meetings!<br>
+                    <strong>🔥 Packed Day:</strong>
+                    Job talk 10-11:30 AM, then ESLA paper work, then 4-hour meeting marathon!<br>
                     Bring water & snacks. Plan bathroom breaks.
+                </div>
+                
+                <div class="time-block meeting">
+                    <div class="checkbox-container" onclick="toggleCheckbox(this)">
+                        <input type="checkbox" id="wed-0" onchange="updateProgress()">
+                        <div class="checkbox-content">
+                            <div class="time">10:00-11:30 AM</div>
+                            <div class="activity">🗓️ Clinical Faculty Job Talk - Jonathan Stange, Ph.D. <span class="badge meeting">Meeting</span><br>
+                            <em style="font-size: 0.85rem; color: #666;">SENSQ 4127 - Affect regulation in depression</em></div>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="time-block focus">
                     <div class="checkbox-container" onclick="toggleCheckbox(this)">
                         <input type="checkbox" id="wed-1" onchange="updateProgress()">
                         <div class="checkbox-content">
-                            <div class="time">9:30 AM-12:00 PM</div>
+                            <div class="time">11:30 AM-12:00 PM</div>
                             <div class="activity"><strong>ESLA ELA wealth paper discussion</strong> <span class="badge due">DUE</span><br>
-                            <em style="font-size: 0.85rem; color: #666;">Some deadline flexibility, but this is your best window. Consider starting at 9 AM for extra time.</em></div>
+                            <em style="font-size: 0.85rem; color: #666;">Shortened window due to job talk - some deadline flexibility if needed</em></div>
                         </div>
                     </div>
                 </div>
@@ -535,7 +552,8 @@
                         <input type="checkbox" id="wed-4" onchange="updateProgress()">
                         <div class="checkbox-content">
                             <div class="time">2:30-3:00 PM</div>
-                            <div class="activity">🗓️ Jonathan Stange (clinical candidate) <span class="badge meeting">Meeting</span></div>
+                            <div class="activity">🗓️ Jonathan Stange one-on-one (clinical candidate) <span class="badge meeting">Meeting</span><br>
+                            <em style="font-size: 0.85rem; color: #666;">Individual meeting after job talk</em></div>
                         </div>
                     </div>
                 </div>
@@ -761,7 +779,7 @@
             <h3>💡 Quick Tips for Success</h3>
             <div class="task-item"><strong>Monday:</strong> Knock out 4 quick tasks in morning - build momentum!</div>
             <div class="task-item"><strong>Tuesday:</strong> Only 2.5 hours after meetings - stay laser focused</div>
-            <div class="task-item"><strong>Wednesday:</strong> Best window for ESLA paper is morning (some flexibility). Bring water for meeting marathon.</div>
+            <div class="task-item"><strong>Wednesday:</strong> Job talk 10-11:30 AM. Very limited time for ESLA paper (11:30-12). Consider moving ESLA if needed. Bring water for 5-meeting marathon.</div>
             <div class="task-item"><strong>Thursday:</strong> Finish Friday's work today - your future self will thank you</div>
             <div class="task-item"><strong>Friday:</strong> Should be smooth if Thursday went well!</div>
         </div>
