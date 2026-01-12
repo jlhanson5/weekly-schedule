@@ -757,6 +757,22 @@
     </div>
     
     <script>
+        // Simple password protection
+        (function() {
+            const correctPassword = '123';
+            const isAuthenticated = sessionStorage.getItem('authenticated');
+            
+            if (!isAuthenticated) {
+                const enteredPassword = prompt('Enter password to view schedule:');
+                if (enteredPassword !== correctPassword) {
+                    alert('Incorrect password!');
+                    document.body.innerHTML = '<div style="text-align:center; padding:50px; font-family:sans-serif;"><h1>🔒 Access Denied</h1><p>Incorrect password.</p></div>';
+                    throw new Error('Access denied');
+                }
+                sessionStorage.setItem('authenticated', 'true');
+            }
+        })();
+        
         let allExpanded = false;
         
         // Load saved checkbox states on page load
