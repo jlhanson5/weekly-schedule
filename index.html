@@ -313,7 +313,7 @@
 <body>
     <div class="header">
         <h1>📅 Your Week: Jan 12-18</h1>
-        <div class="week-summary">9 tasks due • 18+ meetings • You've got this! 💪</div>
+        <div class="week-summary">10 tasks due • 18+ meetings • You've got this! 💪</div>
     </div>
     
     <div class="container">
@@ -341,7 +341,7 @@
             <div class="day-header monday" onclick="toggleDay('monday')">
                 <div>
                     <div class="day-title">Monday, Jan 12</div>
-                    <div class="day-meta">5 tasks due • 2 meetings</div>
+                    <div class="day-meta">6 tasks due • 2 meetings</div>
                 </div>
                 <div class="toggle-icon" id="monday-icon">▼</div>
             </div>
@@ -368,9 +368,19 @@
                 
                 <div class="time-block focus">
                     <div class="checkbox-container" onclick="toggleCheckbox(this)">
+                        <input type="checkbox" id="mon-1c" onchange="updateProgress()">
+                        <div class="checkbox-content">
+                            <div class="time">10:15-10:30 AM</div>
+                            <div class="activity">Make decision about NIMH cross-cutting measure <span class="badge due">DUE</span></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="time-block focus">
+                    <div class="checkbox-container" onclick="toggleCheckbox(this)">
                         <input type="checkbox" id="mon-2" onchange="updateProgress()">
                         <div class="checkbox-content">
-                            <div class="time">10:15-11:15 AM</div>
+                            <div class="time">10:30-11:30 AM</div>
                             <div class="activity">Send out developmental meeting notes <span class="badge due">DUE</span><br>
                             <em style="font-size: 0.85rem; color: #666;">Note: Might take a bit longer than expected</em></div>
                         </div>
@@ -381,8 +391,9 @@
                     <div class="checkbox-container" onclick="toggleCheckbox(this)">
                         <input type="checkbox" id="mon-3" onchange="updateProgress()">
                         <div class="checkbox-content">
-                            <div class="time">11:15-11:30 AM</div>
-                            <div class="activity">Schedule Margaret Sheridan conference call <span class="badge due">DUE</span></div>
+                            <div class="time">11:30-11:30 AM</div>
+                            <div class="activity">Schedule Margaret Sheridan conference call <span class="badge due">DUE</span><br>
+                            <em style="font-size: 0.85rem; color: #666;">Quick task - squeeze in before meeting</em></div>
                         </div>
                     </div>
                 </div>
