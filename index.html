@@ -54,35 +54,55 @@
         }
         
         .day-header {
-            background: #667eea;
-            color: white;
             padding: 1rem;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            user-select: none;
+            transition: background 0.2s;
         }
         
-        .day-header.monday { background: #667eea; }
-        .day-header.tuesday { background: #f093fb; }
-        .day-header.wednesday { background: #f5576c; }
-        .day-header.thursday { background: #4facfe; }
-        .day-header.friday { background: #43e97b; }
-        .day-header.weekend { background: #888; }
+        .day-header:hover {
+            background: #f8f8f8;
+        }
+        
+        .day-header.monday {
+            border-left: 4px solid #4299e1;
+        }
+        
+        .day-header.tuesday {
+            border-left: 4px solid #48bb78;
+        }
+        
+        .day-header.wednesday {
+            border-left: 4px solid #ed8936;
+        }
+        
+        .day-header.thursday {
+            border-left: 4px solid #9f7aea;
+        }
+        
+        .day-header.friday {
+            border-left: 4px solid #f56565;
+        }
+        
+        .day-header.weekend {
+            border-left: 4px solid #a0aec0;
+        }
         
         .day-title {
             font-size: 1.2rem;
             font-weight: 600;
+            margin-bottom: 0.25rem;
         }
         
         .day-meta {
             font-size: 0.85rem;
-            opacity: 0.9;
+            color: #666;
         }
         
         .toggle-icon {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             transition: transform 0.3s;
         }
         
@@ -91,112 +111,113 @@
         }
         
         .day-content {
-            padding: 1rem;
-            display: none;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
         }
         
         .day-content.open {
-            display: block;
+            max-height: 5000px;
+            transition: max-height 0.5s ease-in;
         }
         
         .time-block {
-            margin-bottom: 1rem;
-            padding: 0.75rem;
-            border-left: 4px solid #667eea;
-            background: #f8f9fa;
-            border-radius: 4px;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .time-block:last-child {
+            border-bottom: none;
         }
         
         .time-block.meeting {
-            border-left-color: #764ba2;
-            background: #f3f0ff;
+            background: #ebf8ff;
         }
         
         .time-block.focus {
-            border-left-color: #43e97b;
-            background: #f0fdf4;
+            background: #f0fff4;
         }
         
         .time-block.priority {
-            border-left-color: #f5576c;
-            background: #fef2f2;
-        }
-        
-        .time-block.warning {
-            border-left-color: #fbbf24;
-            background: #fffbeb;
+            background: #fff5f5;
+            border-left: 3px solid #f56565;
         }
         
         .time {
             font-weight: 600;
-            color: #667eea;
-            font-size: 0.9rem;
+            color: #2d3748;
             margin-bottom: 0.25rem;
         }
         
         .activity {
-            color: #333;
-            font-size: 0.95rem;
-        }
-        
-        .activity strong {
-            color: #000;
+            color: #4a5568;
         }
         
         .badge {
             display: inline-block;
             padding: 0.2rem 0.5rem;
             border-radius: 12px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 600;
             margin-left: 0.5rem;
         }
         
-        .badge.due {
-            background: #fecaca;
-            color: #991b1b;
+        .badge.meeting {
+            background: #bee3f8;
+            color: #2c5282;
         }
         
-        .badge.meeting {
-            background: #ddd6fe;
-            color: #5b21b6;
+        .badge.due {
+            background: #fed7d7;
+            color: #742a2a;
         }
         
         .badge.focus {
-            background: #bbf7d0;
-            color: #166534;
+            background: #c6f6d5;
+            color: #22543d;
         }
         
         .alert {
             padding: 1rem;
             border-radius: 8px;
             margin-bottom: 1rem;
-            font-size: 0.9rem;
         }
         
         .alert.warning {
-            background: #fef3c7;
-            border-left: 4px solid #f59e0b;
-            color: #92400e;
+            background: #fffaf0;
+            border-left: 4px solid #ed8936;
+            color: #7c2d12;
         }
         
         .alert.info {
-            background: #dbeafe;
-            border-left: 4px solid #3b82f6;
-            color: #1e40af;
+            background: #ebf8ff;
+            border-left: 4px solid #4299e1;
+            color: #2c5282;
         }
         
-        .alert strong {
-            display: block;
-            margin-bottom: 0.5rem;
+        .expand-all {
+            width: 100%;
+            padding: 0.75rem;
+            background: white;
+            border: 2px solid #667eea;
+            color: #667eea;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            transition: all 0.2s;
+        }
+        
+        .expand-all:hover {
+            background: #667eea;
+            color: white;
         }
         
         .tasks-section {
             background: white;
-            border-radius: 12px;
             padding: 1rem;
+            border-radius: 8px;
             margin-bottom: 1rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
         .tasks-section h3 {
@@ -276,46 +297,14 @@
             font-size: 0.9rem;
             color: #666;
         }
-        
-        .expand-all {
-            background: white;
-            border: 2px solid #667eea;
-            color: #667eea;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            width: 100%;
-            margin-bottom: 1rem;
-            font-size: 1rem;
-        }
-        
-        .expand-all:active {
-            background: #667eea;
-            color: white;
-        }
-        
-        @media (max-width: 640px) {
-            .header h1 {
-                font-size: 1.25rem;
-            }
-            
-            .day-title {
-                font-size: 1.1rem;
-            }
-            
-            .container {
-                padding: 0.5rem;
-            }
-        }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>📅 Your Week: Jan 12-18</h1>
-        <div class="week-summary">10 tasks due • 20 meetings • You've got this! 💪</div>
+        <div class="week-summary">7 tasks • 17 meetings • You've got this! 💪</div>
     </div>
-    
+
     <div class="container">
         <button class="expand-all" onclick="toggleAll()">Expand All Days</button>
         
@@ -328,53 +317,41 @@
             </div>
             <div class="progress-text" id="progress-text">0 of 0 items completed</div>
         </div>
-        
+
         <div class="alert warning">
-            <strong>⚠️ Critical Warnings This Week:</strong>
-            • Wednesday: Job talk 10-11:30 AM, very limited time for ESLA paper<br>
-            • Wednesday 12-4pm: 4 back-to-back meetings after job talk<br>
-            • Tuesday: Only 2.5 hours for focused work
+            <strong>⚠️ Key Insights:</strong><br>
+            • Wednesday: 5 back-to-back meetings (10 AM-4 PM) - pack snacks!<br>
+            • Tuesday must end by 3 PM<br>
+            • Tasks spread smartly across days to match meeting density
         </div>
-        
+
+        <div class="tasks-section">
+            <h3>💡 Quick Tips</h3>
+            <div class="task-item"><strong>Monday:</strong> Start lab website (can continue over multiple days)</div>
+            <div class="task-item"><strong>Tuesday:</strong> Knock out both due tasks after meetings (12-3 PM window)</div>
+            <div class="task-item"><strong>Wednesday:</strong> 5-meeting marathon - minimal task time</div>
+            <div class="task-item"><strong>Thursday:</strong> Best day for deep work - tackle big tasks</div>
+            <div class="task-item"><strong>Friday:</strong> Finish Friday deliverables, wrap up week</div>
+        </div>
+
         <!-- MONDAY -->
         <div class="day-card">
             <div class="day-header monday" onclick="toggleDay('monday')">
                 <div>
                     <div class="day-title">Monday, Jan 12</div>
-                    <div class="day-meta">6 tasks due • 3 meetings</div>
+                    <div class="day-meta">1 task • 3 meetings • Vaccination 5 PM</div>
                 </div>
                 <div class="toggle-icon" id="monday-icon">▼</div>
             </div>
+            
             <div class="day-content" id="monday-content">
-                <div class="alert warning">
-                    <strong>⚠️ Busy Morning:</strong>
-                    Fit in quick tasks before 10 AM job talk, then catch up on remaining tasks after meetings!
-                </div>
-                
-                <div class="time-block focus">
-                    <div class="checkbox-container" onclick="toggleCheckbox(this)">
-                        <input type="checkbox" id="mon-1" onchange="updateProgress()">
-                        <div class="checkbox-content">
-                            <div class="time">9:30-9:45 AM</div>
-                            <div class="activity">Email Andrea re: class logistics <span class="badge due">DUE</span></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="time-block focus">
-                    <div class="checkbox-container" onclick="toggleCheckbox(this)">
-                        <input type="checkbox" id="mon-1b" onchange="updateProgress()">
-                        <div class="checkbox-content">
-                            <div class="time">9:45-10:00 AM</div>
-                            <div class="activity">Email Dorthea and Sri + Make decision about NIMH cross-cutting measure <span class="badge due">DUE</span><br>
-                            <em style="font-size: 0.85rem; color: #666;">Quick tasks before job talk</em></div>
-                        </div>
-                    </div>
+                <div class="alert info">
+                    <strong>📋 Strategy:</strong> Job talk + meetings fill morning/lunch. Afternoon: start lab website (can continue later). Evening: vaccination at 5 PM.
                 </div>
                 
                 <div class="time-block meeting">
                     <div class="checkbox-container" onclick="toggleCheckbox(this)">
-                        <input type="checkbox" id="mon-2" onchange="updateProgress()">
+                        <input type="checkbox" id="mon-1" onchange="updateProgress()">
                         <div class="checkbox-content">
                             <div class="time">10:00-11:30 AM</div>
                             <div class="activity">🗓️ Clinical Faculty Job Talk - Frances Wang, Ph.D. <span class="badge meeting">Meeting</span><br>
@@ -385,73 +362,63 @@
                 
                 <div class="time-block meeting">
                     <div class="checkbox-container" onclick="toggleCheckbox(this)">
-                        <input type="checkbox" id="mon-3" onchange="updateProgress()">
+                        <input type="checkbox" id="mon-2" onchange="updateProgress()">
                         <div class="checkbox-content">
                             <div class="time">11:30 AM-12:30 PM</div>
                             <div class="activity">🗓️ LRDC Faculty Development Committee <span class="badge meeting">Meeting</span><br>
-                            <em style="font-size: 0.85rem; color: #666;">Location: 516 Murdoch</em></div>
+                            <em style="font-size: 0.85rem; color: #666;">516 Murdoch</em></div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="time-block meeting">
                     <div class="checkbox-container" onclick="toggleCheckbox(this)">
-                        <input type="checkbox" id="mon-4" onchange="updateProgress()">
+                        <input type="checkbox" id="mon-3" onchange="updateProgress()">
                         <div class="checkbox-content">
                             <div class="time">1:00-2:00 PM</div>
                             <div class="activity">🗓️ Jamie + Matt <span class="badge meeting">Meeting</span><br>
-                            <em style="font-size: 0.85rem; color: #666;">Location: Murdoch or Zoom</em></div>
+                            <em style="font-size: 0.85rem; color: #666;">Murdoch or Zoom</em></div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="time-block focus">
+                    <div class="checkbox-container" onclick="toggleCheckbox(this)">
+                        <input type="checkbox" id="mon-4" onchange="updateProgress()">
+                        <div class="checkbox-content">
+                            <div class="time">2:00-4:30 PM</div>
+                            <div class="activity">Start lab website update <span class="badge due">Due Thu</span><br>
+                            <em style="font-size: 0.85rem; color: #666;">Use AI: Claude.ai for content, v0.dev for design. Can continue Tue/Wed/Thu</em></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="time-block meeting">
                     <div class="checkbox-container" onclick="toggleCheckbox(this)">
                         <input type="checkbox" id="mon-5" onchange="updateProgress()">
                         <div class="checkbox-content">
-                            <div class="time">2:00-3:00 PM</div>
-                            <div class="activity">Send out developmental meeting notes <span class="badge due">DUE</span><br>
-                            <em style="font-size: 0.85rem; color: #666;">Moved to afternoon due to morning meetings</em></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="time-block focus">
-                    <div class="checkbox-container" onclick="toggleCheckbox(this)">
-                        <input type="checkbox" id="mon-6" onchange="updateProgress()">
-                        <div class="checkbox-content">
-                            <div class="time">3:00-3:15 PM</div>
-                            <div class="activity">Schedule Margaret Sheridan conference call <span class="badge due">DUE</span></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="time-block focus">
-                    <div class="checkbox-container" onclick="toggleCheckbox(this)">
-                        <input type="checkbox" id="mon-7" onchange="updateProgress()">
-                        <div class="checkbox-content">
-                            <div class="time">3:15-4:00 PM</div>
-                            <div class="activity">Start lab website update (use AI) <span class="badge due">DUE</span><br>
-                            <em style="font-size: 0.85rem; color: #666;">Suggestions: Try Claude.ai for content/copy, v0.dev or ChatGPT for design/layout. Can continue later if needed</em></div>
+                            <div class="time">5:00 PM</div>
+                            <div class="activity">💉 Vaccination appointment <span class="badge meeting">Appt</span><br>
+                            <em style="font-size: 0.85rem; color: #666;">Walgreens, 5956 Centre Ave</em></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <!-- TUESDAY -->
         <div class="day-card">
             <div class="day-header tuesday" onclick="toggleDay('tuesday')">
                 <div>
-                    <div class="day-title">Tuesday, Jan 13 ⚠️</div>
-                    <div class="day-meta">End by 3 PM • 1 task due • 2 meetings</div>
+                    <div class="day-title">Tuesday, Jan 13 ⏰</div>
+                    <div class="day-meta">2 tasks due • 2 meetings • Must end 3 PM</div>
                 </div>
                 <div class="toggle-icon" id="tuesday-icon">▼</div>
             </div>
+            
             <div class="day-content" id="tuesday-content">
                 <div class="alert warning">
-                    <strong>⏰ Time Constraint:</strong>
-                    Must end work by 3:00 PM today!
+                    <strong>⏰ Critical:</strong> Must end by 3 PM! Only 3 hours after meetings for 2 tasks due today.
                 </div>
                 
                 <div class="time-block meeting">
@@ -479,49 +446,48 @@
                     <div class="checkbox-container" onclick="toggleCheckbox(this)">
                         <input type="checkbox" id="tue-3" onchange="updateProgress()">
                         <div class="checkbox-content">
-                            <div class="time">12:30-3:00 PM</div>
-                            <div class="activity"><strong>🔥 PRIORITY: STEPS debt research questions</strong> <span class="badge due">DUE</span><br>
-                            <em style="font-size: 0.85rem; color: #666;">Only 2.5 hours! Use insights from morning STEPS meeting</em></div>
+                            <div class="time">12:00-1:30 PM</div>
+                            <div class="activity"><strong>🔥 STEPS debt research questions</strong> <span class="badge due">DUE</span><br>
+                            <em style="font-size: 0.85rem; color: #666;">Use insights from morning STEPS meeting</em></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="time-block priority">
+                    <div class="checkbox-container" onclick="toggleCheckbox(this)">
+                        <input type="checkbox" id="tue-4" onchange="updateProgress()">
+                        <div class="checkbox-content">
+                            <div class="time">1:30-3:00 PM</div>
+                            <div class="activity"><strong>🔥 Sri Letter of Recommendation</strong> <span class="badge due">DUE</span></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <!-- WEDNESDAY -->
         <div class="day-card">
             <div class="day-header wednesday" onclick="toggleDay('wednesday')">
                 <div>
                     <div class="day-title">Wednesday, Jan 14 🔥</div>
-                    <div class="day-meta">HARDEST DAY • 1 task due • 5 meetings</div>
+                    <div class="day-meta">MEETING MARATHON • 5 meetings • 10 AM-4 PM</div>
                 </div>
                 <div class="toggle-icon" id="wednesday-icon">▼</div>
             </div>
+            
             <div class="day-content" id="wednesday-content">
                 <div class="alert warning">
-                    <strong>🔥 Packed Day:</strong>
-                    Job talk 10-11:30 AM, then ESLA paper work, then 4-hour meeting marathon!<br>
-                    Bring water & snacks. Plan bathroom breaks.
+                    <strong>🔥 Meeting Marathon:</strong> 5 consecutive meetings from 10 AM-4 PM!<br>
+                    Bring water, snacks, and plan bathroom breaks. Tasks moved to Thursday.
                 </div>
                 
                 <div class="time-block meeting">
                     <div class="checkbox-container" onclick="toggleCheckbox(this)">
-                        <input type="checkbox" id="wed-0" onchange="updateProgress()">
+                        <input type="checkbox" id="wed-1" onchange="updateProgress()">
                         <div class="checkbox-content">
                             <div class="time">10:00-11:30 AM</div>
                             <div class="activity">🗓️ Clinical Faculty Job Talk - Jonathan Stange, Ph.D. <span class="badge meeting">Meeting</span><br>
                             <em style="font-size: 0.85rem; color: #666;">SENSQ 4127 - Affect regulation in depression</em></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="time-block focus">
-                    <div class="checkbox-container" onclick="toggleCheckbox(this)">
-                        <input type="checkbox" id="wed-1" onchange="updateProgress()">
-                        <div class="checkbox-content">
-                            <div class="time">11:30 AM-12:00 PM</div>
-                            <div class="activity"><strong>ESLA ELA wealth paper discussion</strong> <span class="badge due">DUE</span><br>
-                            <em style="font-size: 0.85rem; color: #666;">Shortened window due to job talk - some deadline flexibility if needed</em></div>
                         </div>
                     </div>
                 </div>
@@ -552,8 +518,7 @@
                         <input type="checkbox" id="wed-4" onchange="updateProgress()">
                         <div class="checkbox-content">
                             <div class="time">2:30-3:00 PM</div>
-                            <div class="activity">🗓️ Jonathan Stange one-on-one (clinical candidate) <span class="badge meeting">Meeting</span><br>
-                            <em style="font-size: 0.85rem; color: #666;">Individual meeting after job talk</em></div>
+                            <div class="activity">🗓️ Jonathan Stange one-on-one (clinical candidate) <span class="badge meeting">Meeting</span></div>
                         </div>
                     </div>
                 </div>
@@ -570,45 +535,36 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- THURSDAY -->
         <div class="day-card">
             <div class="day-header thursday" onclick="toggleDay('thursday')">
                 <div>
-                    <div class="day-title">Thursday, Jan 15</div>
-                    <div class="day-meta">Prep for Friday • 3 meetings</div>
+                    <div class="day-title">Thursday, Jan 15 💪</div>
+                    <div class="day-meta">3 tasks • 2 meetings • Best work day!</div>
                 </div>
                 <div class="toggle-icon" id="thursday-icon">▼</div>
             </div>
+            
             <div class="day-content" id="thursday-content">
                 <div class="alert info">
-                    <strong>💡 Strategy:</strong>
-                    Finish Friday's tasks TODAY to make Friday easier!
+                    <strong>💡 Power Day:</strong> Most time for focused work! Complete NIH Biosketch, ESLA paper, and prep Friday tasks.
                 </div>
                 
-                <div class="time-block meeting">
+                <div class="time-block priority">
                     <div class="checkbox-container" onclick="toggleCheckbox(this)">
                         <input type="checkbox" id="thu-1" onchange="updateProgress()">
                         <div class="checkbox-content">
-                            <div class="time">10:00-11:00 AM</div>
-                            <div class="activity">🗓️ Dena <span class="badge meeting">Meeting</span></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="time-block focus">
-                    <div class="checkbox-container" onclick="toggleCheckbox(this)">
-                        <input type="checkbox" id="thu-2" onchange="updateProgress()">
-                        <div class="checkbox-content">
-                            <div class="time">11:00 AM-12:00 PM</div>
-                            <div class="activity">Continue lab website OR prep Friday tasks <span class="badge focus">Focus</span></div>
+                            <div class="time">9:30-12:00 PM</div>
+                            <div class="activity"><strong>🔥 NIH Biosketch for CNBC B2 grant</strong> <span class="badge due">Due Today</span><br>
+                            <em style="font-size: 0.85rem; color: #666;">Originally due Wed, moved due to meeting marathon</em></div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="time-block meeting">
                     <div class="checkbox-container" onclick="toggleCheckbox(this)">
-                        <input type="checkbox" id="thu-3" onchange="updateProgress()">
+                        <input type="checkbox" id="thu-2" onchange="updateProgress()">
                         <div class="checkbox-content">
                             <div class="time">12:00-1:00 PM</div>
                             <div class="activity">🗓️ EC Lunch for Clinical Job Applicant <span class="badge meeting">Meeting</span></div>
@@ -618,7 +574,7 @@
                 
                 <div class="time-block meeting">
                     <div class="checkbox-container" onclick="toggleCheckbox(this)">
-                        <input type="checkbox" id="thu-4" onchange="updateProgress()">
+                        <input type="checkbox" id="thu-3" onchange="updateProgress()">
                         <div class="checkbox-content">
                             <div class="time">1:00-2:00 PM</div>
                             <div class="activity">🗓️ Spring 2026 Lab Meetings <span class="badge meeting">Meeting</span><br>
@@ -627,46 +583,51 @@
                     </div>
                 </div>
                 
-                <div class="time-block priority">
+                <div class="time-block focus">
                     <div class="checkbox-container" onclick="toggleCheckbox(this)">
-                        <input type="checkbox" id="thu-5" onchange="updateProgress()">
+                        <input type="checkbox" id="thu-4" onchange="updateProgress()">
                         <div class="checkbox-content">
-                            <div class="time">2:00-3:30 PM</div>
-                            <div class="activity"><strong>🔥 Complete Zach Fisher consulting doc</strong><br>
-                            <em style="font-size: 0.85rem; color: #666;">Due Friday - finish TODAY!</em></div>
+                            <div class="time">2:00-3:15 PM</div>
+                            <div class="activity">ESLA ELA wealth paper discussion <span class="badge due">Flexible</span><br>
+                            <em style="font-size: 0.85rem; color: #666;">Moved from Wed - deadline is flexible</em></div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="time-block focus">
                     <div class="checkbox-container" onclick="toggleCheckbox(this)">
-                        <input type="checkbox" id="thu-6" onchange="updateProgress()">
+                        <input type="checkbox" id="thu-5" onchange="updateProgress()">
                         <div class="checkbox-content">
-                            <div class="time">3:30-4:00 PM</div>
-                            <div class="activity">Draft Danny Shaw email <span class="badge focus">Focus</span><br>
-                            <em style="font-size: 0.85rem; color: #666;">Due Friday - draft TODAY!</em></div>
+                            <div class="time">3:15-4:00 PM</div>
+                            <div class="activity">Finish lab website + Prep Friday deliverables <span class="badge focus">Prep</span><br>
+                            <em style="font-size: 0.85rem; color: #666;">Get ahead on Danny Shaw email & Zach Fisher doc</em></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <!-- FRIDAY -->
         <div class="day-card">
             <div class="day-header friday" onclick="toggleDay('friday')">
                 <div>
-                    <div class="day-title">Friday, Jan 16 📻</div>
-                    <div class="day-meta">Podcast day • 2 tasks due • 5 meetings</div>
+                    <div class="day-title">Friday, Jan 16 🎙️</div>
+                    <div class="day-meta">2 tasks due • 4 meetings • Podcast day!</div>
                 </div>
                 <div class="toggle-icon" id="friday-icon">▼</div>
             </div>
+            
             <div class="day-content" id="friday-content">
+                <div class="alert info">
+                    <strong>🎙️ Podcast Day:</strong> Morning podcast, then meetings. If you prepped Thursday, just final touches needed!
+                </div>
+                
                 <div class="time-block focus">
                     <div class="checkbox-container" onclick="toggleCheckbox(this)">
                         <input type="checkbox" id="fri-1" onchange="updateProgress()">
                         <div class="checkbox-content">
                             <div class="time">9:30-10:00 AM</div>
-                            <div class="activity">Podcast prep (tech check, talking points) <span class="badge focus">Prep</span></div>
+                            <div class="activity">Podcast prep & tech check <span class="badge focus">Prep</span></div>
                         </div>
                     </div>
                 </div>
@@ -676,7 +637,7 @@
                         <input type="checkbox" id="fri-2" onchange="updateProgress()">
                         <div class="checkbox-content">
                             <div class="time">10:00-11:00 AM</div>
-                            <div class="activity">🗓️📻 Jamie Hanson podcast <span class="badge meeting">Podcast</span><br>
+                            <div class="activity">🗓️🎙️ Jamie Hanson podcast <span class="badge meeting">Podcast</span><br>
                             <em style="font-size: 0.85rem; color: #666;">Riverside online studio</em></div>
                         </div>
                     </div>
@@ -693,9 +654,19 @@
                     </div>
                 </div>
                 
-                <div class="time-block meeting">
+                <div class="time-block focus">
                     <div class="checkbox-container" onclick="toggleCheckbox(this)">
                         <input type="checkbox" id="fri-4" onchange="updateProgress()">
+                        <div class="checkbox-content">
+                            <div class="time">12:30-1:00 PM</div>
+                            <div class="activity">Final review & send Danny Shaw email <span class="badge due">DUE</span></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="time-block meeting">
+                    <div class="checkbox-container" onclick="toggleCheckbox(this)">
+                        <input type="checkbox" id="fri-5" onchange="updateProgress()">
                         <div class="checkbox-content">
                             <div class="time">1:00-2:00 PM</div>
                             <div class="activity">🗓️ Sri and Jamie <span class="badge meeting">Meeting</span><br>
@@ -706,85 +677,50 @@
                 
                 <div class="time-block meeting">
                     <div class="checkbox-container" onclick="toggleCheckbox(this)">
-                        <input type="checkbox" id="fri-5" onchange="updateProgress()">
-                        <div class="checkbox-content">
-                            <div class="time">2:00-3:00 PM</div>
-                            <div class="activity">🗓️ Developmental Welcome Back Event <span class="badge meeting">Meeting</span><br>
-                            <em style="font-size: 0.85rem; color: #666;">SENSQ 4127 - Pastries & Jeopardy!</em></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="time-block priority">
-                    <div class="checkbox-container" onclick="toggleCheckbox(this)">
                         <input type="checkbox" id="fri-6" onchange="updateProgress()">
                         <div class="checkbox-content">
-                            <div class="time">3:00-3:30 PM</div>
-                            <div class="activity"><strong>Send Danny Shaw email</strong> <span class="badge due">DUE</span></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="time-block priority">
-                    <div class="checkbox-container" onclick="toggleCheckbox(this)">
-                        <input type="checkbox" id="fri-7" onchange="updateProgress()">
-                        <div class="checkbox-content">
-                            <div class="time">3:30-3:45 PM</div>
-                            <div class="activity"><strong>Final review & send Zach Fisher doc</strong> <span class="badge due">DUE</span></div>
+                            <div class="time">2:00-3:00 PM</div>
+                            <div class="activity">🗓️ Developmental Welcome Back Event <span class="badge meeting">Event</span><br>
+                            <em style="font-size: 0.85rem; color: #666;">SENSQ 4127 - Pastries & Jeopardy!</em></div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="time-block focus">
                     <div class="checkbox-container" onclick="toggleCheckbox(this)">
-                        <input type="checkbox" id="fri-8" onchange="updateProgress()">
+                        <input type="checkbox" id="fri-7" onchange="updateProgress()">
                         <div class="checkbox-content">
-                            <div class="time">3:45-4:00 PM</div>
-                            <div class="activity">Week wrap-up, email triage <span class="badge focus">Admin</span></div>
+                            <div class="time">3:00-4:00 PM</div>
+                            <div class="activity">Finalize Zach Fisher consulting doc + Week wrap-up <span class="badge due">DUE</span></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <!-- WEEKEND -->
         <div class="day-card">
             <div class="day-header weekend" onclick="toggleDay('weekend')">
                 <div>
-                    <div class="day-title">Weekend: Sat 17 & Sun 18</div>
-                    <div class="day-meta">Rest & family time 🏡</div>
+                    <div class="day-title">Weekend, Jan 18-19 ✨</div>
+                    <div class="day-meta">Rest & Recharge</div>
                 </div>
                 <div class="toggle-icon" id="weekend-icon">▼</div>
             </div>
+            
             <div class="day-content" id="weekend-content">
                 <div class="alert info">
-                    <strong>🏡 Keep Clear for Rest:</strong>
-                    You've earned it after this week!
+                    <strong>✨ You earned it!</strong> No work tasks scheduled. Enjoy your weekend with family.
                 </div>
                 
-                <div class="time-block">
-                    <div class="time">Saturday Evening</div>
-                    <div class="activity">Penny's birthday party 🎂</div>
-                </div>
-                
-                <div class="time-block">
-                    <div class="time">Sunday 11:00 AM-1:00 PM</div>
-                    <div class="activity">Kesher kids</div>
+                <div class="time-block focus">
+                    <div class="time">Saturday & Sunday</div>
+                    <div class="activity">Family time, rest, recharge for next week 💚</div>
                 </div>
             </div>
         </div>
-        
-        <!-- QUICK TIPS -->
-        <div class="tasks-section">
-            <h3>💡 Quick Tips for Success</h3>
-            <div class="task-item"><strong>Monday:</strong> Knock out 4 quick tasks in morning - build momentum!</div>
-            <div class="task-item"><strong>Tuesday:</strong> Only 2.5 hours after meetings - stay laser focused</div>
-            <div class="task-item"><strong>Wednesday:</strong> Job talk 10-11:30 AM. Very limited time for ESLA paper (11:30-12). Consider moving ESLA if needed. Bring water for 5-meeting marathon.</div>
-            <div class="task-item"><strong>Thursday:</strong> Finish Friday's work today - your future self will thank you</div>
-            <div class="task-item"><strong>Friday:</strong> Should be smooth if Thursday went well!</div>
-        </div>
     </div>
-    
+
     <script>
         // Simple password protection
         (function() {
